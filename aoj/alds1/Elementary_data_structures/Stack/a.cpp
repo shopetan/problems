@@ -47,4 +47,36 @@ namespace utils{
 
 
 int main() {
+  stack<int> sta_calc;
+  int i_left;
+  int i_right;
+  string str_tmp;
+
+  while(cin >> str_tmp){
+    switch(str_tmp[0]) {
+    case '+':
+      i_left = sta_calc.top(); sta_calc.pop();
+      i_right = sta_calc.top(); sta_calc.pop();
+      sta_calc.push(i_left + i_right);
+      break;
+    case '-':
+      i_right = sta_calc.top(); sta_calc.pop();
+      i_left = sta_calc.top(); sta_calc.pop();
+      sta_calc.push(i_left - i_right);
+      break;
+    case '*':
+      i_left = sta_calc.top(); sta_calc.pop();
+      i_right = sta_calc.top(); sta_calc.pop();
+      sta_calc.push(i_left * i_right);
+      break;
+    case '/':
+      i_left = sta_calc.top(); sta_calc.pop();
+      i_right = sta_calc.top(); sta_calc.pop();
+      sta_calc.push(i_left / i_right);
+      break;
+    default:
+      sta_calc.push(stoi(str_tmp));
+    }
+  }
+  cout << sta_calc.top() << endl;  
 }
