@@ -44,30 +44,27 @@ namespace utils{
     return mat;
   }
 }
-
+#define MOD 1000000007
+long long fact(long long k){
+  long long sum = 1;
+  for (long long i = 1; i <=k;i++){
+    sum *= i;
+    sum %= MOD;
+  }
+  return (sum);
+}
 
 int main() {
-  /*
-  vector<double> A(2);
-  REP(i,2)
-    scanf("%d", &A[i]);
-  */
   vint(A,2);
-  if(A[0]-1 == A[1] || A[0]+1 == A[1] || A[0] == A[1]){
-    
-    double size = pow(10,9) + 7;
-    double ans = (A[0]*A[1]);
-    if(A[0]>A[1])
-      ans *= A[1];
-    else if(A[0]<A[1])
-      ans *= A[0];
-    else if(A[0]==A[1])
-      ans *= A[0];
-    
-    ans = (long long int)ans%(long long int)size;
-    cout << (int)ans << endl;
-  }
-  else{
+
+  if(abs(A[0]-A[1])<=1){
+    long long ans = 1;
+    ans = (fact(A[0]) * fact(A[1])) % MOD;
+    if(A[0] == A[1])
+      ans = (ans*2)%MOD;
+    cout << ans << endl;
+  }else{
     cout << 0 << endl;
   }
+
 }
