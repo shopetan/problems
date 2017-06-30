@@ -49,24 +49,15 @@ namespace utils{
 int main() {
   long long n;
   cin >> n;
-  int cnt = 0;
-  int num = 1;
-  int pw = 0;
-  
-  while(pow(num,2.0) < n){
-    num++;
-  }
-  REP(i,num){
-    if(n % (i+1) == 0){
-      if(pow((i+1),2.0) == n){
-	pw++;
-      }else{
-	if(i+1 < num){
-	  cnt++;
-	}
-      }
+  set<string> st;
+
+  FOR(i,1,sqrt(n)+1){
+    if( (n % i) == 0){
+      string a = to_string(n / i);
+      st.insert(a + to_string(i));
+      st.insert(to_string(i) + a);
     }
   }
 
-  cout << cnt*2 + pw << endl;
+  cout << st.size() << endl;
 }

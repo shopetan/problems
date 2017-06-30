@@ -47,14 +47,10 @@ namespace utils{
 
 
 int main() {
-  vint(a,3);
+  double b1,b2,b3;
+  cin>>b1>>b2>>b3;
 
-  double left = a[1] - a[2];
-  double right = a[0] - a[1];
-
-  double r = left/right;
-  double d = a[2] - a[1]*r;
+  long long ans = b3 + pow((b3-b2),2)/(b2-b1);
   
-  double ans = a[2]*r + d;
-  cout << (int)ans << endl;
+  cout << ans << endl;
 }
