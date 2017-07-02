@@ -47,51 +47,31 @@ namespace utils{
 
 
 int main() {
-  int(n);
-  int(k);
-  stack<int> st;
-  int A[n] = {};
-  int B[n] = {};
-  
-  REP(i,n){
-    char c;
-    cin >> c;
-    if(c == '('){
-      st.push(i);
-      A[i] = st.top();
-      B[i] = -1;
+  int(N);
+  int(K);
+  K--;
+  string(S);
+  int i = 0;
+  if(S[K] == '('){
+    int k =0;
+    for(i = K;;i++){
+      if(S[i] == '(')
+	k++;
+      else
+	k--;
+      if(k==0)
+	break;
     }
-    if(c == ')'){
-      B[i] = st.top();
-      A[i] = -1;
-      st.pop();
-    }
-  }
-
-  REP(i,n){
-    if(i == k-1){
-      if(A[i] != -1){
-	REP(j,n){
-	  if(B[j] == A[i]){
-	    cout << j+1 << endl;
-	  }
-	}
-      }else{
-	REP(j,n){
-	  if(A[j] == B[i])
-	    cout << j+1 << endl;
-	}
-      }
+  }else{
+    int k =0;
+    for(i = K;;i--){
+      if(S[i] == '(')
+	k++;
+      else
+	k--;
+      if(k==0)
+	break;
     }
   }
-
-  /*
-  REP(i,n)
-    cout << A[i] << " ";
-  cout << endl;
-
-  REP(i,n)
-    cout << B[i] << " ";
-  cout << endl;
-  */
+  cout << i+1 << endl;
 }
