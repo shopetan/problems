@@ -50,58 +50,7 @@ namespace utils{
 int main() {
   int(n);
   int(k);
-  int odd = 0;
-  int num = 0;
-  int cnt =0;
-  double A[k] = {};
-  
   vint(a,n);
-  sort(a.begin(),a.end(),greater<int>());
-
-  if(n%k == 0){
-  }else{
-    cout << n%k << endl;
-    int i = n;
-    while(i >= 0){
-      i -= k;
-      if(i < 0)
-	odd = abs(i);
-    }
-  }
-  
-  num = ceil((double)n/(double)k);
-  
-  if(odd != 0){
-    REP(i,odd){
-      A[0] += a[i];
-      cnt++;
-    }
-    cout << "hoge" << endl;
-    A[0] /= odd;
-    REP(i,k){
-      REP(j,num){
-	A[i+1] += a[cnt];
-	cnt++;
-      }
-      A[i+1] /= num;
-    }
-  }else{
-    REP(i,k){
-      REP(j,num){
-	A[i] += a[cnt];
-	cnt++;
-      }
-      A[i] /= num;
-    }
-  }
-
-  
-  sort(a.begin(),a.end(),greater<int>());
-  
-  int ans = ceil(*max_element(&A[0],&A[k]) - *min_element(&A[0],&A[k]));
-  
-  REP(i,k)
-    cout << A[i] << " ";
-  cout << endl;
+  int ans =( *max_element(a.begin(),a.end()) - *min_element(a.begin(),a.end()));
   cout << ans << endl;
 }
