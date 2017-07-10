@@ -44,14 +44,55 @@ namespace utils{
     return mat;
   }
 }
+struct Check{
+  int num;
+  char c;
+};
 
 
 int main() {
   int(n);
-  int A[4];
-
-  REP(i,n){
-    
+  Check A[10];
+  Check C[10];
+  
+  REP(i,10){
+    A[i].num = i;
+    A[i].c = 't';
+    C[i].num = i;
+    C[i].c = 'n';
   }
   
+  
+  REP(i,n){
+    vint(B,4);
+    string(st);
+    if(st == "NO"){
+      REP(j,4)
+	A[B[j]].c = 'n';
+    }else if(st == "YES"){
+      REP(j,4){
+	if(A[B[j]].c != 'n')
+	  A[B[j]].c = 'c';
+      }
+      REP(j,10){	
+	if(A[j].c != 'c'){
+	  A[j].c = 'n';
+	}
+      }
+      REP(j,4){
+	if(A[B[j]].c != 'n')
+	  A[B[j]].c = 't';
+      }
+      REP(j,10){
+	C[j].num = i;
+	C[j].c = 'n';
+      }
+    }
+  }
+
+  REP(i,10){
+    if(A[i].c != 'n')
+    cout << A[i].num << endl;
+  }
+
 }
