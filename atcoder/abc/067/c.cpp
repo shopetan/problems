@@ -47,4 +47,19 @@ namespace utils{
 
 
 int main() {
+  int(n);
+  vint(A,n);
+  long long ans = 1000000000000000000LL;
+  long long  x = 0;
+  long long  X = 0;
+  REP(i,n)
+    X += A[i];
+
+  REP(i,n){
+    x += A[i];
+    if(i+1<n)
+      ans = min(ans,abs(X-2*x));
+  }
+  cout << ans << endl;
+  
 }
