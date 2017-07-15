@@ -47,4 +47,17 @@ namespace utils{
 
 
 int main() {
+  int(n);
+  int(k);
+  int num = 0;
+  vint(A,n);
+  sort(A.begin(),A.end(),greater<int>());
+
+  REP(i,k)
+    num += A[i];
+
+  cout << num << endl;
+    
+  
+  
 }
