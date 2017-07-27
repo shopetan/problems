@@ -55,6 +55,7 @@ int prim(){
     int min = 2001;
     int mini = -1;
 
+    
     REP(i,n){
       if(visit[i] == true){
 	REP(j,n){
