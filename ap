@@ -14,8 +14,11 @@ cat << EOT >> $1.cpp
 # define int(x) int x; scanf("%d",&x);
 # define vint(v,n) vector<int> v(n); REP(i,n) scanf("%d", &v[i]);
 # define string(x) string x; cin >> x;
+# define all(a) a.begin(),a.end()
 
-#define INF 1<<30
+# define INF 1<<30
+typedef long long ll;
+const ll MOD = 1e9+7;
 
 using namespace std;
 
