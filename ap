@@ -15,6 +15,8 @@ cat << EOT >> $1.cpp
 # define vint(v,n) vector<int> v(n); REP(i,n) scanf("%d", &v[i]);
 # define string(x) string x; cin >> x;
 
+#define INF 1<<30
+
 using namespace std;
 
 namespace utils{
