@@ -68,6 +68,6 @@ int main() {
     }
   }
   
-  utils::print(A);
+  //utils::print(A);
   cout << change_num << endl;
 }
